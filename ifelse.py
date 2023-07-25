@@ -35,15 +35,6 @@ for i in lst:
 
 
 
-print("-----range함수-----")
-print(list(range(10)))
-print(list(range(1,11)))
-print(list(range(10,0,-1)))
-print(list(range(2000,2024)))
-
-
-
-
 # 반복문
 value = 5
 while value > 0:
@@ -60,3 +51,26 @@ for key,val in d.items():
     print(key,val)
 
 
+print("-----range함수-----")
+print(list(range(10))) # 0부터 시작하여 10-1까지 (10개)
+print(list(range(1,11)))
+print(list(range(10,0,-1)))
+print(list(range(2000,2024)))
+
+
+
+# 파이썬 언어는 함축을 선호함
+# 긴 단어도 함축
+print("-----리스트컴프리헨션-----")
+lst = list(range(1,11)) # 1부터 11-1까지
+print([i**2 for i in lst if i > 5])
+
+tp = ("apple", "banana", "orange")
+print([len(i) for i in tp])
+
+d = {100:"apple", 200:"kiwi"}
+print([v.upper() for v in d.values()])
+
+
+for i in map(lambda x:x+10, lst):
+    print(i)
