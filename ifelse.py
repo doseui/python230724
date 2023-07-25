@@ -72,5 +72,5 @@ d = {100:"apple", 200:"kiwi"}
 print([v.upper() for v in d.values()])
 
 
-for i in map(lambda x:x+10, lst):
+for i in map(lambda x:x+10, lst):   # 매핑하는 함수(빌트인 함수)
     print(i)
