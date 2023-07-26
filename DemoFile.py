@@ -26,12 +26,23 @@ print("{0:.2f}".format(4/3))
 
 # 파일 쓰기
 f = open("c:/work/demo.txt", "wt", encoding='utf-8')
-f.write("첫번째 두번째\n세번째\n")
+f.write("첫번째\n두번째\n세번째\n")
 f.close()
 
 # 파일 읽기
-f = open("c:/work/demo.txt", "rt", encoding="utf-8")
+f = open(r"c:/work/demo.txt", "rt", encoding="utf-8")
 result = f.read()
-f.close()
+# f.close()
 print(result)
 
+print("-----라인단위-----")
+f.seek(0)
+print( f.readline(), end="")    # str 반환 (print 함수는 출력하고 줄바꿈 한다(기본값))
+print( f.readline(), end="")    # str 반환
+print("-----리스트로 받기-----")
+f.seek(0)
+result = f.readlines()    # list 반환
+print(result)
+
+f.close()
+print(result)
