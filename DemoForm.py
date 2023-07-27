@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
 # 디자인된 문서 로딩
-form_class = uic.loadUiType("DemoForm.ui")[0] # 
+form_class = uic.loadUiType("DemoForm.ui")[0] # 다중상속 대비?
 
 # 폼 클래스 정의
 class DemoForm(QDialog, form_class):
@@ -15,6 +15,11 @@ class DemoForm(QDialog, form_class):
         super().__init__()
         self.setupUi(self)
         self.label.setText("첫번째 화면")
+
+
+
+
+
 
 
 # 직접 모듈을 실행했는지 체크(진입점)
