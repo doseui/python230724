@@ -1,11 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-from openpyxl import Workbook   # 주로 엑셀파일을 읽거나 쓸 때 사용하는 라이브러리
+from openpyxl import Workbook
 
 search_keyword='맥북에어'
 
-# 쿼리 스트링. url 창에 한번에 입력하여 웹서버에 넘기는 방식.
-# (서치 키워드에 입력하는 대로 검색한 결과를 보여줌)
 url = f'https://search.naver.com/search.naver?where=view&sm=tab_jum&query={search_keyword}'
 
 response = requests.get(url)
@@ -45,6 +43,6 @@ for page in range(1, 101):
 
         ws.append([blog_name, blog_address, post_title, post_date])
 
-path = '/Users/user/Desktop/'
+path = 'c:/work/'
 file_path = f'{path}{search_keyword}_blog_data.xlsx'
 wb.save(file_path)
